@@ -27,6 +27,11 @@ blaGetData(){
   });
   Alert.alert('Action!', 'A new To-do item was created');
 }
+putStorage(){
+  firebase.storage().ref('/assests/icon.png').put('icon.png');
+  Alert.alert('Action!', 'Am bagat imaginea boss');
+}
+
 
 render() {
     const { currentUser } = this.state
@@ -37,6 +42,8 @@ return (
         </Text>
           <Button onPress={this.getData} title='PRESS'/>
           <Button onPress={this.blaGetData} title='PRESS Me 2'/>
+          
+          <Button onPress={this.putStorage} title='PRESS Me 3'/>
       </View>
     )
   }
